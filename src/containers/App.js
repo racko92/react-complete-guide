@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import classes from './App.css';
 import Persons from './../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit'
 
-class App extends Component {
+class App extends PureComponent {
 
   constructor (props) {
     super(props);
@@ -59,6 +59,13 @@ class App extends Component {
     const doesShow = this.state.showPersons;
     this.setState( {showPersons: !doesShow} );
   }
+
+  // PureComponent optimizing shouldComponentUpdate() by itself
+  // shouldComponentUpdate (nextProps, nextState) {
+  //   console.log('[App.js] Inside shouldComponentUpdate', nextProps, nextState)
+  //   return nextState.persons !== this.state.persons ||
+  //   nextState.showPersons !== this.state.showPersons;
+  // }
 
   render() {
     console.log('[App.js] Inside Render');
