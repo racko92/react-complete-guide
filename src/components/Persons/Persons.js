@@ -37,7 +37,7 @@ class Persons extends PureComponent {
   componentDidUpdate () {
     console.log('[UPDATE Persons.js] Inside shouldComponentUpdate ()')
   }
-  render () {
+  render () {  
     console.log('[Persons.js] Inside render()');
     return this.props.persons.map((person, index) => {
       return <Person
