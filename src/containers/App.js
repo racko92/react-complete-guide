@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import classes from './App.css';
 import Persons from './../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit'
+import WithClass from './../hoc/WithClasses';
 
 class App extends PureComponent {
 
@@ -80,7 +81,7 @@ class App extends PureComponent {
     }
 
     return (
-      <div className={classes.App}>
+      <WithClass classes={classes.App}>
         <Cockpit
           appTitle={this.props.title}
           showPersons={this.state.showPersons}
@@ -88,7 +89,7 @@ class App extends PureComponent {
           clicked={this.togglePersonsHandler}
         />
         {persons}
-      </div>
+      </WithClass>
     );
     // Code above gets compiled to code below
     // return React.createElement('div', {className:'App'}, React.createElement('h1', null, 'Does this work now?'));
