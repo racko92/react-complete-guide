@@ -21,6 +21,7 @@ const cockpit = ( props ) => {
 
   
     return (
+        // <Aux> same as <Fragment> that is imported from React
         <Aux>
             <h1>{ props.appTitle }</h1>
             <p className={assignedClasses.join(' ')}>This is really working!</p>
